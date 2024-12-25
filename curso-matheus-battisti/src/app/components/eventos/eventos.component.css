@@ -1,0 +1,30 @@
+div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+  gap: 5px;
+}
+
+button {
+  margin-top: 5px;
+  width: 100px;
+  padding: 3px 6px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(250, 167, 0);
+  font-weight: 550;
+  transition: all .2s ease;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+div p {
+  margin-top: 3px;
+}
