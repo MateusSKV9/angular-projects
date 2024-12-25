@@ -1,0 +1,13 @@
+<section>
+  <h2>Section if-render</h2>
+  <p *ngIf="canShow">Estamos exibindo isso, porque foi permitido</p>
+  <p *ngIf="name === 'Mateus'; else notMateus">O nome é Mateus</p>
+
+  <ng-template #notMateus>
+    <p *ngIf="name === 'Maria'; else nameNotFound">O nome é Maria</p>
+  </ng-template>
+
+  <ng-template #nameNotFound>
+    <p>O nome não foi encontrado</p>
+  </ng-template>
+</section>
