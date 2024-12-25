@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+section {
+  margin-top: 10px;
+  background-color: cornflowerblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+section h2 {
+  margin-bottom: 7px;
+}
