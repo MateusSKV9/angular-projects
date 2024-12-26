@@ -6,11 +6,12 @@ import { DirectivesComponent } from "./components/directives/directives.componen
 import { IfRenderComponent } from "./components/if-render/if-render.component";
 import { EventosComponent } from "./components/eventos/eventos.component";
 import { EmitterComponent } from "./components/emitter/emitter.component";
+import { ListRenderComponent } from "./components/list-render/list-render.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FirstComponentComponent, ParentDataComponent, DirectivesComponent, IfRenderComponent, EventosComponent, EmitterComponent],
+  imports: [FirstComponentComponent, ParentDataComponent, DirectivesComponent, IfRenderComponent, EventosComponent, EmitterComponent, ListRenderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
