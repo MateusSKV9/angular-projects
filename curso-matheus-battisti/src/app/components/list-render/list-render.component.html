@@ -8,7 +8,19 @@
 
   <div class="container">
     <div class="pet" *ngFor="let animal of animals">
-      Nome: {{ animal.name }} - {{ animal.type }}
+      <p>Nome: {{ animal.name }} - {{ animal.type }}</p>
+      <button (click)="togleAge(animal)" type="button">
+        {{ animal.showAge ? "Hide age" : "Show age" }}
+      </button>
+      <p *ngIf="animal.showAge">Age: {{ animal.age }}</p>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="pet" *ngFor="let animal2 of animals2">
+      <p>animal: {{ animal2.name }}</p>
+      <p>Tamanho: {{ animal2.tamanho }}</p>
     </div>
   </div>
 </section>

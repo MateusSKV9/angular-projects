@@ -17,6 +17,7 @@ ul {
   width: 150px;
   height: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -27,3 +28,4 @@ ul {
 .pet:hover {
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
 }
+
