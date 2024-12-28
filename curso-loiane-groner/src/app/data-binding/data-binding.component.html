@@ -1,0 +1,128 @@
+<section>
+  <article>
+    <h1>Interpolação</h1>
+    <p>String redenrizada com Interpolação: {{ url }}</p>
+    <p>Resultado de 1+1 é: {{ 1 + 1 }}</p>
+    <p>Resultado de 1+1 não é {{ 1 + 1 + getValor() }}</p>
+    <p>
+      Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}
+    </p>
+  </article>
+
+  <article>
+    <h1>Property Binding</h1>
+    <div>
+      <img src="{{ urlImage }}" alt="" />
+      <img [src]="urlImage" alt="" />
+    </div>
+  </article>
+
+  <article>
+    <h1>Event binding</h1>
+    <div>
+      <button (click)="botaoClicado()" type="button" class="button-primary">
+        Clique-me
+      </button>
+
+      <br /><br />
+
+      <input
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor(campoInput.value)"
+        (blur)="salvarValor(campoInput.value)"
+        #campoInput
+        type="text"
+        name="a"
+        id="a"
+        title=""
+        placeholder="Digite"
+      />
+
+      <p *ngIf="valorAtual">Valor atual: {{ valorAtual }}</p>
+      <p *ngIf="valorSalvo">Valor atual: {{ valorSalvo }}</p>
+
+      <br /><br />
+
+      <span
+        (mouseover)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        [class.highlight]="isMouseOver"
+      >
+        Passe o mouse sobre mim
+      </span>
+    </div>
+  </article>
+
+  <article>
+    <h1>Two-Way Data-Binding</h1>
+
+    <div>
+      <input
+        [value]="nome"
+        (input)="nome = inputValue.value"
+        #inputValue
+        type="text"
+        name="a"
+        id="a"
+        placeholder="a"
+      />
+      <p>Texto digitado: {{ nome }}</p>
+    </div>
+
+    <input
+      [ngModel]="nome"
+      (ngModelChange)="nome = $event"
+      type="text"
+      name="b"
+      id="b"
+      placeholder="b"
+    />
+
+    <input
+      [(ngModel)]="nome"
+      (blur)="salvarValorInput(nome)"
+      (keyup.enter)="salvarValorInput(nome)"
+      type="text"
+      name="c"
+      id="c"
+      placeholder="c"
+    />
+    <p>{{ nome2 }}</p>
+
+    <div>
+      <input
+        [(ngModel)]="pessoa.nome"
+        type="text"
+        name="d"
+        id="d"
+        placeholder="d"
+      />
+      <input
+        [(ngModel)]="pessoa.idade"
+        type="text"
+        name="e"
+        id="e"
+        placeholder="e"
+      />
+      <input
+        [(ngModel)]="pessoa.endereco.cidade"
+        type="text"
+        name="f"
+        id="f"
+        placeholder="f"
+      />
+      <input
+        [(ngModel)]="pessoa.endereco.estado"
+        type="text"
+        name="g"
+        id="g"
+        placeholder="g"
+      />
+
+      <p>
+        Meu nome é {{ pessoa.nome }}, tenho {{ pessoa.idade }} e sou de
+        {{ pessoa.endereco.cidade }}/{{ pessoa.endereco.estado }}
+      </p>
+    </div>
+  </article>
+</section>
