@@ -63,7 +63,7 @@
         #inputValue
         type="text"
         name="a"
-        id="a"
+        id="b"
         placeholder="a"
       />
       <p>Texto digitado: {{ nome }}</p>
@@ -74,7 +74,7 @@
       (ngModelChange)="nome = $event"
       type="text"
       name="b"
-      id="b"
+      id="c"
       placeholder="b"
     />
 
@@ -84,7 +84,7 @@
       (keyup.enter)="salvarValorInput(nome)"
       type="text"
       name="c"
-      id="c"
+      id="d"
       placeholder="c"
     />
     <p>{{ nome2 }}</p>
@@ -94,28 +94,28 @@
         [(ngModel)]="pessoa.nome"
         type="text"
         name="d"
-        id="d"
+        id="e"
         placeholder="d"
       />
       <input
         [(ngModel)]="pessoa.idade"
         type="text"
         name="e"
-        id="e"
+        id="f"
         placeholder="e"
       />
       <input
         [(ngModel)]="pessoa.endereco.cidade"
         type="text"
         name="f"
-        id="f"
+        id="g"
         placeholder="f"
       />
       <input
         [(ngModel)]="pessoa.endereco.estado"
         type="text"
         name="g"
-        id="g"
+        id="h"
         placeholder="g"
       />
 
@@ -125,4 +125,14 @@
       </p>
     </div>
   </article>
+  <article>
+    <h1>Input Property</h1>
+    <app-curso [nome]="nomeDoCurso"></app-curso>
+
+    <app-contador [valor]="valorInicial" 
+    (mudouValor)="onMudouValor($event)"
+    ></app-contador>
+  </article>
 </section>
+
+

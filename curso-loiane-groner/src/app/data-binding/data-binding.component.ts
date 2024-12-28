@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { InputPropertyComponent } from "../input-property/input-property.component";
+import { OutputPropertyComponent } from "../output-property/output-property.component";
 
 @Component({
   selector: 'app-data-binding',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, InputPropertyComponent, OutputPropertyComponent],
   templateUrl: './data-binding.component.html',
   styleUrls: ['./data-binding.component.css']
 })
@@ -19,6 +21,8 @@ export class DataBindingComponent {
   isMouseOver: boolean = false;
   nome: string = 'abc';
   nome2!: string;
+  nomeDoCurso: string = 'Angular';
+  valorInicial: number = 15;
 
   pessoa: any = {
     nome: 'Def',
@@ -55,5 +59,9 @@ export class DataBindingComponent {
 
   onMouseOverOut() {
     this.isMouseOver = !this.isMouseOver;
+  }
+
+  onMudouValor(evento: any) {
+    alert(evento.novoValor);
   }
 }
