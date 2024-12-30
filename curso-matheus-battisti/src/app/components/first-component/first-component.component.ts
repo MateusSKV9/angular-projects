@@ -5,15 +5,15 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './first-component.component.html',
-  styleUrl: './first-component.component.css'
+  styleUrl: './first-component.component.css',
 })
-export class FirstComponentComponent {
-  name: string = "Mateus";
+export class FirstComponent {
+  name: string = 'Mateus';
   years: number = 20;
-  job: string = "web developer";
-  hobbies: string[] = ["Estudar", "Assistir a vídeos", "ler"];
+  job: string = 'web developer';
+  hobbies: string[] = ['Estudar', 'Assistir a vídeos', 'ler'];
   motorcycle = {
-    name: "Cinquentinha Phoenix",
-    year: 2013
-  }
+    name: 'Cinquentinha Phoenix',
+    year: 2013,
+  };
 }

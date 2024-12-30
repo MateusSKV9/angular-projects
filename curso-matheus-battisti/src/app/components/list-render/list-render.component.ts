@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { Animal } from '../../Animal';
 import { Animals2Service } from '../../animals2.service';
 import { Animal2 } from '../../Animal2';
-import { ListService } from '../../services/list.service';
+import { ListService } from '../../services/list.service'
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-list-render',
@@ -16,9 +17,12 @@ export class ListRenderComponent {
   show: boolean = false;
   animals2!: Animal2[];
 
+  animals: Animal[] = [];
+
+
   constructor(private animals2Service: Animals2Service, private listService: ListService) {
     this.animals2 = this.animals2Service.getAnimals2();
-
+    this.getAnimals();
   }
 
   togleAge(animal: Animal): void {
@@ -29,11 +33,7 @@ export class ListRenderComponent {
     this.animals = this.listService.remove(this.animals, animal);
   }
 
-  animals: Animal[] = [
-    { name: 'Turca', type: 'Dog', age: 1, showAge: false },
-    { name: 'Tom', type: 'Cat', age: 2, showAge: false },
-    { name: 'Frida', type: 'Dog', age: 3, showAge: false },
-    { name: 'Bob', type: 'Horse', age: 4, showAge: false },
-  ];
-
+  getAnimals(): void {
+    this.listService.getAll().subscribe((animals)=> (this.animals = animals));
+  }
 }
