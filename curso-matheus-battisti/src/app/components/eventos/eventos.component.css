@@ -26,5 +26,10 @@ button:active {
 }
 
 div p {
+  font-size: 1.2em;
+  color: transparent;
+  font-weight: bold;
+  background-image: linear-gradient(to left, red, blue);
+  background-clip: text;
   margin-top: 3px;
 }

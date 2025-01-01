@@ -5,11 +5,12 @@ import { Animals2Service } from '../../animals2.service';
 import { Animal2 } from '../../Animal2';
 import { ListService } from '../../services/list.service'
 import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-list-render',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './list-render.component.html',
   styleUrl: './list-render.component.css',
 })
