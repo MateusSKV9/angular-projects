@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './eventos.component.css'
 })
 export class EventosComponent {
-  show: boolean = true;
+  show: boolean = false;
 
   showMessage(): void {
     this.show = !this.show;
