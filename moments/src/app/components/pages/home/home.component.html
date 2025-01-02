@@ -1,5 +1,11 @@
 <div class="home-container">
   <h1>Veja o que estão compartilhando</h1>
+  <div class="search-container">
+    <form>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" name="search" id="search" (input)="search($event)" placeholder="Ou busque por um momento...">
+    </form>
+  </div>
 
   <div *ngIf="moments.length > 0; else noMoments">
     <div class="moments-container">

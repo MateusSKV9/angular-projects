@@ -35,3 +35,25 @@ a {
 a:hover {
   background-color: #efefef;
 }
+
+.search-container {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.search-container form {
+  width: 30%;
+  position: relative;
+}
+
+.search-container i {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.search-container input {
+  padding: .5em;
+  width: 100%;
+  text-align: center;
+}
