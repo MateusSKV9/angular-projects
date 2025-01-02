@@ -12,7 +12,7 @@ export class MomentService {
 
   constructor(private http: HttpClient) {}
 
-  crateMoment(formData: FormData): Observable<FormData> {
+  createMoment(formData: FormData): Observable<FormData> {
     return this.http.post<FormData>(this.apiUrl, formData);
   }
 }
