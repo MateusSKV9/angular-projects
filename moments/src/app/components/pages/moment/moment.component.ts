@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MomentService } from '../../../services/moment.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { Moment } from '../../../../Moments';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { MessagesService } from '../../../services/messages.service';
 @Component({
   selector: 'app-moment',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './moment.component.html',
   styleUrl: './moment.component.css',
 })
