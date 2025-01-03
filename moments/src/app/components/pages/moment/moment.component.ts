@@ -59,11 +59,10 @@ export class MomentComponent {
   }
 
   async removeHandler(id: number) {
-    await this.momentService.removeMoment(id).subscribe();
-
-    this.messageService.add('Momento excluído com sucesso!');
-
-    this.router.navigate(['/']);
+    await this.momentService.removeMoment(id).subscribe(() => {
+      this.messageService.add('Momento excluído com sucesso!');
+      this.router.navigate(['/']);
+    });
   }
 
   async onSubmit(formDirective: FormGroupDirective) {
@@ -77,9 +76,9 @@ export class MomentComponent {
       .createComment(data)
       .subscribe((coment) => this.moment!.comments!.push(coment.data));
 
-      this.messageService.add("Comentário adicionado!");
+    this.messageService.add('Comentário adicionado!');
 
-      this.commentForm.reset();
-      formDirective.resetForm();
+    this.commentForm.reset();
+    formDirective.resetForm();
   }
 }
