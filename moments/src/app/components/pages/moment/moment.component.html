@@ -13,12 +13,72 @@
     <a class="edit-btn" routerLink="/moments/edit/{{ moment.id }}">
       <i class="fa-regular fa-pen-to-square"></i>Editar
     </a>
-    <button class="remove-btn" type="button" (click)="removeHandler(moment.id!)">
+    <button
+      class="remove-btn"
+      type="button"
+      (click)="removeHandler(moment.id!)"
+    >
       <i class="fa-solid fa-trash"></i>Excluir
     </button>
   </div>
-  <!-- TODO comentários -->
-   <div class="comments">
-    <h3>Comentário (0)</h3>
-   </div>
+
+  <!-------------- comentários ------------------>
+
+  <div class="comments">
+    <h3>
+      Comentários ({{
+        moment.comments!.length > 0 ? moment.comments!.length : 0
+      }}):
+    </h3>
+    <div *ngIf="moment.comments!.length > 0; else noComents">
+      <div *ngFor="let comment of moment.comments" class="comment-container">
+        <p class="comment">
+          {{ comment.text }}
+        </p>
+        <p class="author"><span>Por: </span>{{ comment.username }}</p>
+      </div>
+    </div>
+    <ng-template #noComents>
+      <p>Não há comentários</p>
+    </ng-template>
+  </div>
+  <div class="comment-form">
+    <h3>Deixe um comentário:</h3>
+    <form
+      [formGroup]="commentForm"
+      #formDir="ngForm"
+      (ngSubmit)="onSubmit(formDir)"
+    >
+      <div class="form-group">
+        <label for="comentario">comentário: </label>
+        <textarea
+          formControlName="text"
+          name="comentario"
+          id="comentario"
+          placeholder="O que você quer comentar?"
+          required
+        ></textarea>
+        <div *ngIf="text.invalid && formDir.submitted" class="validation-error">
+          <p *ngIf="text.errors?.['required']">O comentário é obrigatório</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Nome: </label>
+        <input
+          formControlName="username"
+          name="username"
+          id="username"
+          placeholder="Digite seu nome?"
+          required
+        />
+        <div
+          *ngIf="username.invalid && formDir.submitted"
+          class="validation-error"
+        >
+          <p *ngIf="username.errors?.['required']">O nome é obrigatório</p>
+        </div>
+      </div>
+      <input type="submit" value="Comentar!" />
+    </form>
+  </div>
 </div>
