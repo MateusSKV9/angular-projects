@@ -1,3 +1,9 @@
+.home-container > h1 {
+  margin-bottom: .5em;
+  text-align: center;
+}
+
+
 .moments-container {
   display: flex;
   flex-wrap: wrap;
