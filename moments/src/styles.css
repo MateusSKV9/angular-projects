@@ -60,7 +60,49 @@ input[type="submit"]:hover {
 
 .validation-error p {
   color: #dc3545;
-  margin-top: .4em;
+  margin-top: 0.4em;
   border-left: 3px solid #dc3545;
-  padding-left: .2em;
+  padding-left: 0.2em;
+}
+
+/* BUTTONS */
+
+.edit-btn,
+.remove-btn {
+  border: 1px solid #efefef;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  margin: 0 0.5em;
+  cursor: pointer;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+button i {
+  margin-right: 0.2em;
+  transition: 0.4s;
+}
+
+.edit-btn,
+.edit-btn i {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.edit-btn:hover,
+.edit-btn:hover i {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.remove-btn,
+.remove-btn i {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.remove-btn:hover,
+.remove-btn:hover i {
+  color: #fff;
+  background-color: #dc3545;
 }

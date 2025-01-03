@@ -1,0 +1,24 @@
+<div class="moment" *ngIf="moment">
+  <h1>{{ moment.title }}</h1>
+  <img
+    src="{{ baseApiUrl }}uploads/{{ moment.image }}"
+    alt="{{ moment.title }}"
+  />
+  <div class="about-moment">
+    <h3>Sobre este momento:</h3>
+    <p>{{ moment.description }}</p>
+  </div>
+  <div class="actions">
+    <h3>Acões:</h3>
+    <a class="edit-btn" href="/moments//edit/{{ moment.id }}">
+      <i class="fa-regular fa-pen-to-square"></i>Editar
+    </a>
+    <button class="remove-btn" type="button">
+      <i class="fa-solid fa-trash"></i>Excluir
+    </button>
+  </div>
+  <!-- TODO comentários -->
+   <div class="comments">
+    <h3>Comentário (0)</h3>
+   </div>
+</div>
